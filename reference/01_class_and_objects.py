@@ -67,45 +67,58 @@ Other Methods
 '''
 
 # Start the class here
-
+class Dog:
     # Add any class variables
-
+    species = "Canis lupus familiaris"
 
     # Add Constructor. must be called __init__
-
-
+    def __init__(self, name, breed, sex = "F"):
+        # Instance variables. Must use self.Name to be instance variables
+        self.name = name
+        self.breed = breed
+        self.sex = sex
+    
     # Method. Same thing as a function, but in a class.
     # Note passing "self" in gives us access to all the instance variables.
+    def doggy_description(self):
+        if self.sex == 'M':
+            message = self.name + " is a " + self.breed + " and he is a good boy!"
+        else:
+            message = self.name + " is a " + self.breed + " and she is a good girl!"
 
+        return message
 
 
 # Get access to class variable by typing ClassName.class_variable
 # Print out the species class variable
     
-
+print(Dog.species)
 
 # Create 2 dog variables and store them in 2 separate variables
 # this is called "instantiation". You are creating 2 dog objects, or 2 "instances" of a dog.
 # this calls the __init__ constructor method.
-
+dog_1 = Dog("Buddy", "Golden Retriever", "M")
+dog_2 = Dog("Princess", "German Shepherd", "F")
 
 # try printing out the variables you just made. Its not very useful yet.
-
+print(dog_1)
+print(dog_2)
 
 # Now try printing out each dog's name. You can access instance variables
 # by referencing the variable the object is stored in, then using .
 # like dog_1.variable_name
 
-
+print(dog_1.name)
+print(dog_2.name)
 
 # You can also alter any variables stored in a class. Alter the first dog's name, then print it out again
-
+dog_1.name = "Henry"
+print(dog_1.name)
 
 # methods are accessed in the same way as variables.
 # you call methods by typing the instance of the class (like dog1) then . then the method name:
 # so instance.methodName()
-# print out the 
+# print out the doggy description of the first dog, then the second dog
 
-
-# try putting the 
-
+print(dog_1.doggy_description())
+print(dog_2.doggy_description())
